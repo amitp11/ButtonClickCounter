@@ -1,4 +1,7 @@
 import React,{useState} from "react";
+import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -13,11 +16,16 @@ function App() {
   }
   return (
        <div className="Home">
-        <h2>HomePage</h2>
-        <button type="button" id="showdiv" onClick={increaseCount}>Increase</button>
-        <button type="button" id="showdiv" onClick={decreaseCount}>Decrease</button>
-        <button type="button" id="showdiv" onClick={resetCount}>Reset</button>
-        <p id="showdiv">{counter}</p>
+        <div className="A">
+        <h2 style={{float:"left"}}>HomePage</h2>
+        <h4 style={{float:"right"}}>Hello Amit</h4>
+        </div>
+        <div className="B" id="counter">
+        <Button variant="danger" id="showdiv" onClick={increaseCount}>Increase</Button>
+        <Button variant="success" id="showdiv" onClick={decreaseCount}>Decrease</Button>
+        <Button variant="secondary" id="showdiv" onClick={resetCount}>Reset</Button>
+        <input type="text" value={counter}/>
+        </div>
        </div>
   );
 }
